@@ -10,7 +10,7 @@ namespace Gato
     {
 
         public String[] tablero = new String[9];
-
+        private int cantidadTurnos;
         public Model()
         {
             this.cantidadTurnos = 0;
@@ -22,8 +22,7 @@ namespace Gato
 
         public Boolean verificarSiElJuegoContinua()
         {
-            if(empate() && alguienGano())
-            if(empate() || alguienGano())
+           if(empate() || alguienGano())
                 return false;
             return true;
         }
