@@ -13,6 +13,13 @@ namespace Gato
             Model model = new Model();
             View view = new View(model);
             Controller controller = new Controller(model, view);
+
+            controller.mensajeInicialConsola();
+            while (controller.verificarSiElJuegoContinua())
+            {
+                controller.jugarUnTurno();
+            }
+
         }
     }
 }
