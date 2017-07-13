@@ -18,7 +18,13 @@ namespace Gato
             while (controller.verificarSiElJuegoContinua())
             {
                 controller.jugarUnTurno();
+                controller.jugarUnTurno("X");
+                if (controller.verificarSiElJuegoContinua() == false)
+                    break;
+                controller.jugarUnTurno("O");
             }
+
+            Console.ReadLine();
 
         }
     }

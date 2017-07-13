@@ -21,12 +21,10 @@ namespace Gato
             Console.WriteLine("Welcome to Tic Tac Toe.\n");
             Console.WriteLine("Press any key to continue.");
             Console.ReadLine();
-            Console.Clear();
         }
 
         public void dibujarTablero(String[] tablero,String jugador)
         {
-            Console.Clear();
             Console.WriteLine("Jugador: " + jugador);
             Console.WriteLine("Seleccione el numero de la posicion donde desea poner la ficha");
             for (int i = 0; i < 7; i += 3)

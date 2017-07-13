@@ -29,6 +29,7 @@ namespace Gato
         }
 
         public void jugarUnTurno() 
+        
         public void jugarUnTurno(string jugador) 
         {
             while (true)
@@ -45,5 +46,6 @@ namespace Gato
                 }
             }
         }
+
     }
 }

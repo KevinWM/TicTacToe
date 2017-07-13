@@ -10,7 +10,6 @@ namespace Gato
     {
 
         public String[] tablero = new String[9];
-        private int cantidadTurnos;
 
         public Model()
         {
@@ -24,6 +23,7 @@ namespace Gato
         public Boolean verificarSiElJuegoContinua()
         {
             if(empate() && alguienGano())
+            if(empate() || alguienGano())
                 return false;
             return true;
         }
@@ -88,6 +88,7 @@ namespace Gato
 
         public void agregarFiguraTablero(string figura, string posicion)
         {
+            this.cantidadTurnos++;
             this.tablero[Convert.ToInt32(posicion)] = figura;
         }
 
