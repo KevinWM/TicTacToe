@@ -86,5 +86,10 @@ namespace Gato
             return false;
         }
 
+        public void agregarFiguraTablero(string figura, string posicion)
+        {
+            this.tablero[Convert.ToInt32(posicion)] = figura;
+        }
+
     }
 }
