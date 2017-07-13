@@ -29,11 +29,20 @@ namespace Gato
         }
 
         public void jugarUnTurno() 
+        public void jugarUnTurno(string jugador) 
         {
             while (true)
             {
                 this.view.dibujarTablero(this.model.tablero, "X");
                 int selection = Convert.ToInt32(Console.ReadLine());
+                this.view.dibujarTablero(this.model.tablero, jugador);
+                string seleccion = Console.ReadLine();
+                Boolean esPosicionValida = this.model.verificarSiIngresoPosicionValida(seleccion);
+                if (esPosicionValida)
+                {
+                    this.model.agregarFiguraTablero(jugador, seleccion);
+                    break;
+                }
             }
         }
     }
