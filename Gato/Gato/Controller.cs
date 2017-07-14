@@ -27,15 +27,12 @@ namespace Gato
         {
             return this.model.verificarSiElJuegoContinua();
         }
-
-        public void jugarUnTurno() 
         
         public void jugarUnTurno(string jugador) 
         {
             while (true)
             {
-                this.view.dibujarTablero(this.model.tablero, "X");
-                int selection = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("asd");
                 this.view.dibujarTablero(this.model.tablero, jugador);
                 string seleccion = Console.ReadLine();
                 Boolean esPosicionValida = this.model.verificarSiIngresoPosicionValida(seleccion);
@@ -44,6 +41,22 @@ namespace Gato
                     this.model.agregarFiguraTablero(jugador, seleccion);
                     break;
                 }
+            }
+        }
+
+        public void verificarFindeJuego() 
+        {
+            bool siGanoAlguien = this.model.alguienGano();
+            if (siGanoAlguien == false)
+            {
+                this.view.dibujarTableroFinal(this.model.tablero);
+                this.view.empato();
+
+            }
+            else
+            {
+                this.view.dibujarTableroFinal(this.model.tablero);
+                this.view.gano();
             }
         }
 

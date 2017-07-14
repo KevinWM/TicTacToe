@@ -34,25 +34,32 @@ namespace Gato
             return false;
         }
 
-        private Boolean alguienGano() 
+        public Boolean alguienGano() 
         {
-            if (this.tablero[0].Equals(this.tablero[1]) && this.tablero[1].Equals(this.tablero[2]))
+            if (isPosicionesEnElTableroIgual(0, 1, 2))
                 return true;
-            if (this.tablero[3].Equals(this.tablero[4]) && this.tablero[4].Equals(this.tablero[5]))
+            if (isPosicionesEnElTableroIgual(3, 4, 5))
                 return true;
-            if (this.tablero[6].Equals(this.tablero[7]) && this.tablero[7].Equals(this.tablero[8]))
+            if (isPosicionesEnElTableroIgual(6, 7, 8))
                 return true;
-            if (this.tablero[0].Equals(this.tablero[3]) && this.tablero[3].Equals(this.tablero[6]))
+            if (isPosicionesEnElTableroIgual(0, 3, 6))
                 return true;
-            if (this.tablero[1].Equals(this.tablero[4]) && this.tablero[4].Equals(this.tablero[7]))
+            if (isPosicionesEnElTableroIgual(1, 4, 7))
                 return true;
-            if (this.tablero[2].Equals(this.tablero[5]) && this.tablero[5].Equals(this.tablero[8]))
+            if (isPosicionesEnElTableroIgual(2, 5, 8))
                 return true;
-            if (this.tablero[0].Equals(this.tablero[4]) && this.tablero[4].Equals(this.tablero[8]))
+            if (isPosicionesEnElTableroIgual(0, 4, 8))
                 return true;
-            if (this.tablero[2].Equals(this.tablero[4]) && this.tablero[4].Equals(this.tablero[6]))
+            if (isPosicionesEnElTableroIgual(2, 4, 6))
                 return true;
 
+            return false;
+        }
+
+        private Boolean isPosicionesEnElTableroIgual(int posicion1, int posicion2, int posicion3)
+        {
+            if (this.tablero[posicion1].Equals(this.tablero[posicion2]) && this.tablero[posicion2].Equals(this.tablero[posicion3]))
+                return true;
             return false;
         }
 

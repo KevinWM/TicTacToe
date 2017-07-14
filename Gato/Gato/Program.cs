@@ -10,21 +10,24 @@ namespace Gato
     {
         static void Main(string[] args)
         {
-            Model model = new Model();
-            View view = new View(model);
-            Controller controller = new Controller(model, view);
-
-            controller.mensajeInicialConsola();
-            while (controller.verificarSiElJuegoContinua())
+            while(true)
             {
-                controller.jugarUnTurno();
-                controller.jugarUnTurno("X");
-                if (controller.verificarSiElJuegoContinua() == false)
-                    break;
-                controller.jugarUnTurno("O");
-            }
+                Model model = new Model();
+                View view = new View(model);
+                Controller controller = new Controller(model, view);
 
-            Console.ReadLine();
+                controller.mensajeInicialConsola();
+                while (controller.verificarSiElJuegoContinua())
+                {
+                    controller.jugarUnTurno("X");
+                    if (controller.verificarSiElJuegoContinua() == false)
+                        break;
+                    controller.jugarUnTurno("O");
+                }
+                controller.verificarFindeJuego();
+                Console.WriteLine("Juego Finalizado presione una tecla para continuar");
+                Console.ReadLine();
+            }
 
         }
     }

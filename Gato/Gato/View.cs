@@ -18,9 +18,8 @@ namespace Gato
         public void ImprimirMensajeInicial()
         {
             Console.Clear();
-            Console.Title = ("Tic Tac Toe Version 2");
-            Console.WriteLine("Welcome to Tic Tac Toe.\n");
-            Console.WriteLine("Press any key to continue.");
+            Console.Title = ("Tic Tac Toe Prueba Pernix");
+            Console.WriteLine("Presione una tecla para continuar");
             Console.ReadLine();
         }
 
@@ -34,6 +33,25 @@ namespace Gato
                 Console.WriteLine(tablero[i] + "|" + tablero[i + 1] + "|" + tablero[i + 2]);
             }
         
+        }
+
+        public void gano()
+        {
+            Console.WriteLine("Has ganado");
+        }
+
+        public void empato()
+        {
+            Console.WriteLine("Empate");
+        }
+
+        public void dibujarTableroFinal(string[] tablero)
+        {
+            Console.Clear();
+            for (int i = 0; i < 7; i += 3)
+            {
+                Console.WriteLine(tablero[i] + "|" + tablero[i + 1] + "|" + tablero[i + 2]);
+            }
         }
 
     }
