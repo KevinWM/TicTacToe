@@ -17,6 +17,7 @@ namespace Gato
 
         public void ImprimirMensajeInicial()
         {
+            Console.Clear();
             Console.Title = ("Tic Tac Toe Version 2");
             Console.WriteLine("Welcome to Tic Tac Toe.\n");
             Console.WriteLine("Press any key to continue.");
@@ -25,6 +26,7 @@ namespace Gato
 
         public void dibujarTablero(String[] tablero,String jugador)
         {
+            Console.Clear();
             Console.WriteLine("Jugador: " + jugador);
             Console.WriteLine("Seleccione el numero de la posicion donde desea poner la ficha");
             for (int i = 0; i < 7; i += 3)
