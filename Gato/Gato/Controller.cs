@@ -32,7 +32,6 @@ namespace Gato
         {
             while (true)
             {
-                Console.WriteLine("asd");
                 this.view.dibujarTablero(this.model.tablero, jugador);
                 string seleccion = Console.ReadLine();
                 Boolean esPosicionValida = this.model.verificarSiIngresoPosicionValida(seleccion);
